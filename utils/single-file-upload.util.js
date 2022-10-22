@@ -15,7 +15,7 @@ module.exports = (dest, whitelist, name = 'file') => {
         upload.single(name)(req, res, next)
 
         // make sur we wait for the upload to finish to solve the req.file is undefined
-        await multerDelay()
-        next()
+        //await multerDelay()
+        //next()
     }
 }

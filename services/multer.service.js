@@ -27,7 +27,7 @@ const uploadConfiguration = (dest, whitelist) => {
             return cb(new AppError('file type is not allowed', 400), false)
         }
         // make this to solve problem with req.file is undefined in the following middleware
-        req.file = file
+        //req.file = file
         cb(null, true)
     }
 
@@ -42,6 +42,7 @@ const uploadConfiguration = (dest, whitelist) => {
  * @returns promise that resolve after the queue is clear
  */
 const multerDelay = () => {
+    console.log('multerDelay');
     return new Promise((resolve) => setTimeout(() => resolve(), 0))
 } 
 
