@@ -18,6 +18,14 @@ const addUser = async (req, res) => {
     return res.status(201).json({ msg: `Successfully added the user with the _id: ${newUser._id}` })
 }
 
+const updateProfilePicture = async (req, res, next) => {
+
+    console.log(req.file);
+    return res.status(200).json('hi')
+
+}
+
 module.exports = {
-    addUser
+    addUser,
+    updateProfilePicture
 }

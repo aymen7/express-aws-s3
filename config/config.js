@@ -13,4 +13,5 @@ module.exports = {
     PORT: process.env.PORT,
     JWT_SECRET: process.env.JWT_SECRET,
     DB_CONNECTION: process.env.DB_CONNECTION,
+    TMP_STORAGE: process.env.TMP_STORAGE,
 }
