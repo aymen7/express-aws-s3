@@ -15,8 +15,13 @@ const addUser = async (doc) => {
     return await User.create(doc)
 }
 
+const updateUser = async (_id, body) => {
+    await User.updateOne({ _id, isArchived: false }, { '$set': { ...body } })
+}
+
 module.exports = {
     getOneByQuery,
     comparePassword,
-    addUser
+    addUser,
+    updateUser
 }
