@@ -1,0 +1,22 @@
+version: '3.7'
+
+services:
+  mongo:
+    container_name: mongo
+    image: mongo:6.0.2
+    restart: always
+    ports:
+      - 27018:${PORT_MONGODB}
+    volumes:
+      - mongo-db:/data/db
+  api:
+    depends_on:
+      - mongo
+    container_name: aws-s3-api
+    build: .
+    restart: always
+    ports:
+      - ${PORT}:${PORT}
+
+volumes:
+  mongo-db:
